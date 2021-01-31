@@ -31,25 +31,25 @@ class TestValidate:
     def test_example(self, strict):
         token = r"secret-token:E92FB7EB-D882-47A4-A265-A0B6135DC842%20foo"
         expected = True
-        result = validate(token, strict)
+        result = validate(token, strict=strict)
         assert result == expected
 
     def test_invalid(self, strict):
         token = "banana"
         expected = False
-        result = validate(token, strict)
+        result = validate(token, strict=strict)
         assert result == expected
 
     def test_every_char(self, strict):
         token = "secret-token:aA%20" + "".join(VALID_CHARS)
         expected = True
-        result = validate(token, strict)
+        result = validate(token, strict=strict)
         assert result == expected
 
     def test_accidentally_invalid(self, strict):
         token = "secret-token:domain/authtype/code"
         expected = not strict
-        result = validate(token, strict)
+        result = validate(token, strict=strict)
         assert result == expected
 
 
