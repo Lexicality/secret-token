@@ -74,7 +74,7 @@ class TestEncode:
 
     def test_twice(self):
         secret = "secret-token:domain%2Fauthtype%2Fcode"
-        expected = r"secret-token:secret-token%3Adomain%252Fauthtype%252Fcode"
+        expected = r"secret-token:secret-token:domain%252Fauthtype%252Fcode"
         result = encode(secret)
 
         assert result == expected

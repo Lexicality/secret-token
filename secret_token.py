@@ -35,11 +35,13 @@ VALID_CHARS = (
     ",",
     ";",
     "=",
+    ":",
+    "@",
 )
 _valid_chars = "".join(VALID_CHARS)
 
 # TODO: Generate this regex from VALID_CHARS
-VALIDATION = re.compile(r"^secret-token:[\w%\-._~!$&'()*+,;=]+$")
+VALIDATION = re.compile(r"^secret-token:[\w%\-._~!$&'()*+,;=:@]+$")
 
 
 def encode(secret: str) -> str:
