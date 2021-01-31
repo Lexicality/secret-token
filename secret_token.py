@@ -16,8 +16,8 @@
 """
 
 
-import re
 from urllib.parse import quote, unquote
+import re
 
 VALID_CHARS = (
     "-",
