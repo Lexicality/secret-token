@@ -18,7 +18,7 @@ import os
 
 import secret_token
 
-API_TOKEN = secret_token.decode(os.environ.get("API_TOKEN"))
+API_TOKEN = secret_token.decode(os.environ["API_TOKEN"])
 ```
 
 [rfc8959]: https://tools.ietf.org/html/rfc8959 "The \"secret-token\" URI Scheme"
