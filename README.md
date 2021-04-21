@@ -24,7 +24,7 @@ import os
 
 import secret_token
 
-API_TOKEN = secret_token.decode(os.environ.get("API_TOKEN"))
+API_TOKEN = secret_token.decode(os.environ.get["API_TOKEN"])
 print(API_TOKEN)
 ```
 
