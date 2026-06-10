@@ -34,22 +34,23 @@ build-backend = "uv_build"
 
 [dependency-groups]
 lint = ["ruff==0.15.16"]
-test = ["tox~=3.21"]
+test = ["pytest~=9.0", "tox-uv~=1.35", "tox~=4.55"]
 
 
 [tool.tox]
-legacy_tox_ini = """
-[tox]
-# Currently supported python versions
-envlist = py310,py311,py312,py313,py314
+env_list = ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
-[testenv]
-# install pytest in the virtualenv where commands will be executed
-deps = pytest
-commands =
-    # NOTE: you can run any command line tool here - not just tests
-    pytest
-"""
+[tool.tox.env_run_base]
+description = "run the test suite with pytest"
+deps = ["pytest~=9.0"]
+commands = [
+    [
+        "pytest",
+        { replace = "posargs", default = [
+            "tests",
+        ], extend = true },
+    ],
+]
 
 
 [tool.ruff.lint]
