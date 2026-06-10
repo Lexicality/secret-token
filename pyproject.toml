@@ -5,12 +5,11 @@ authors = [{ name = "Lexi Robinson", email = "lexi@lexi.org.uk" }]
 description = "Easy manipulation of RFC8959 secret-token URIs"
 license = "Apache-2.0"
 readme = "README.md"
-requires-python = ">=3.6"
+requires-python = ">=3.7"
 dependencies = []
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "License :: OSI Approved :: Apache Software License",
-    "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
@@ -40,7 +39,7 @@ test = ["tox~=3.21"]
 legacy_tox_ini = """
 [tox]
 # Currently supported python versions
-envlist = py36,py37,py38,py39
+envlist = py37,py38,py39
 
 [testenv]
 # install pytest in the virtualenv where commands will be executed
@@ -52,7 +51,7 @@ commands =
 
 
 [tool.black]
-target-version = ['py36']
+target-version = ['py37']
 
 
 [tool.isort]
