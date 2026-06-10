@@ -1,3 +1,7 @@
+# Copyright (c) 2020 Lexi Robinson
+# SPDX-License-Identifier: Apache-2.0
+# ruff: noqa: T201
+
 import argparse
 import sys
 
